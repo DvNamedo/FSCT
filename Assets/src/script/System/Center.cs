@@ -36,30 +36,14 @@ public class Center : MonoBehaviour
     }
 
 
-    public int testValue = 0;
-    private float mTestF = 0f;
-    public float testF
+    public StartAnimatingPartition step = StartAnimatingPartition.none;
+    public enum StartAnimatingPartition
     {
-        get
-        {
-            return mTestF;
-        }
-        set
-        {
-            if(value < 2.5f)
-            {
-                mTestF = value;
-            }
-            else
-            {
-                mTestF = 2.5f;
-            }
-        }
-    }
+        none,
+        btnClick,
+        slicingEnd,
+        blackBG_Show
 
-    public void testFunction()
-    {
-        Debug.Log("h");
     }
 
     public void CursorSetActive(bool activate)
@@ -76,5 +60,6 @@ public class Center : MonoBehaviour
         }
 
     }
+
 
 }
