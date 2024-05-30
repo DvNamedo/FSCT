@@ -9,7 +9,8 @@ public class CharactorMove : MonoBehaviour
     public float jumpWeight = 1f;
     public float jumpDelay = 0.2f;
     public int duration = 10;
-    //[SerializeField] Vector3 target;
+    [SerializeField]
+    GameObject center;
     Rigidbody rigid;
     bool OnGround = false;
 
@@ -22,25 +23,34 @@ public class CharactorMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var dir = Vector3.zero;
+
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(Vector3.forward * weight * Time.deltaTime);
+            dir = Vector3.forward;
+
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(Vector3.back * weight * Time.deltaTime);
+            dir = Vector3.back;
+
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.left * weight * Time.deltaTime);
+            dir = Vector3.left;
+
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right * weight * Time.deltaTime);
+            dir = Vector3.right;
+
         }
+
+        rigid.MovePosition(rigid.position + center.transform.TransformDirection(dir).normalized * Time.deltaTime * weight);
+
 
 
         if (Input.GetKeyDown(KeyCode.Space) && OnGround)
@@ -48,6 +58,8 @@ public class CharactorMove : MonoBehaviour
 
             StartCoroutine(Jump(jumpWeight, jumpDelay, duration));
         }
+
+
 
     }
 
@@ -60,6 +72,10 @@ public class CharactorMove : MonoBehaviour
 
             OnGround = true;
         }
+
+
+
+
     }
 
 

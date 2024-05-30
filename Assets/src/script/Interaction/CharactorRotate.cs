@@ -17,7 +17,7 @@ public class CharactorRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0f, -Input.GetAxis("Mouse X") * Xspeed, 0f, Space.World);
+        transform.Rotate(0f, Input.GetAxis("Mouse X") * Xspeed, 0f, Space.World);
         transform.Rotate(-Input.GetAxis("Mouse Y") * Xspeed, 0f, 0f);
        
 
