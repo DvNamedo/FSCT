@@ -43,9 +43,8 @@ public class Center : MonoBehaviour
     {
         none,
         btnClick,
-        slicingEnd,
+        FadingEnd,
         blackBG_Show
-
     }
 
 

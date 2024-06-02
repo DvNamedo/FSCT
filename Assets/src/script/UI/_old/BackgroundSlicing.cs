@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+//old file 
+/*
 public class BackgroundSlicing : MonoBehaviour
 {
     public float changeInterval = 0.5f;
@@ -33,7 +36,7 @@ public class BackgroundSlicing : MonoBehaviour
             yield return new WaitForSeconds(changeInterval);
         }
 
-        Center.instance.step = Center.StartAnimatingPartition.slicingEnd;
+        //Center.instance.step = Center.StartAnimatingPartition.slicingEnd;
         bg.pixelsPerUnitMultiplier = 1f;
         bg.sprite = black;
         yield return new WaitForSeconds(blackTime);
@@ -48,3 +51,4 @@ public class BackgroundSlicing : MonoBehaviour
         
     }
 }
+*/
