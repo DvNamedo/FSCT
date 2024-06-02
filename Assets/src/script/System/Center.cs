@@ -36,6 +36,8 @@ public class Center : MonoBehaviour
     }
 
 
+    public bool isCorrectOnQuestion = true;
+
     public StartAnimatingPartition step = StartAnimatingPartition.none;
     public enum StartAnimatingPartition
     {
@@ -46,20 +48,7 @@ public class Center : MonoBehaviour
 
     }
 
-    public void CursorSetActive(bool activate)
-    {
-        if(activate == false)
-        {
-            Cursor.visible = false;                     //mouseCursor no see
-            Cursor.lockState = CursorLockMode.Locked;   //mouseCursor fixed
-        }
-        else
-        {
-            Cursor.visible = true;                     //mouseCursor can see        
-            Cursor.lockState = CursorLockMode.None;   //mouseCursor free
-        }
 
-    }
 
 
 }

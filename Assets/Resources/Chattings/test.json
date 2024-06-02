@@ -1,0 +1,37 @@
+{
+  "chatSet": [
+    {
+      "speaker": "player",
+      "message": "나는 플레이어다",
+      "type": "general",
+      "ChoiceQizer": {},
+      "AnswerQizer": {}
+    },
+    {
+      "speaker": "player",
+      "message": "나는 플레이어다",
+      "type": "choice",
+      "ChoiceQizer": {
+        "options": [
+          "아니다",
+          "맞다",
+          "맞지만 아니다",
+          "아니지만 맞다",
+          "모르겠다"
+        ],
+        "correctAnswer": "맞다"
+      },
+      "AnswerQizer": {}
+    },
+    {
+      "speaker": "player",
+      "message": "나는 플레이어다",
+      "type": "answer",
+      "ChoiceQizer": {},
+      "AnswerQizer": {
+        "Question": "진짜일까?",
+        "correctAnswer": "맞다"
+      }
+    }
+  ]
+}
