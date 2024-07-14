@@ -37,7 +37,89 @@ public class Center : MonoBehaviour
 
 
     public bool isCorrectOnQuestion = true;
-    public float playerHP = 100.0f;
+    public float staminaTimer = 2.0f;
+    public float staminaTimerLimit = 2.0f;
+    public float staminaRegenSpeed = 1.0f;
+    public float playerMaxHP = 100.0f;
+    private float _playerHP = 100.0f;
+
+    public float playerHP
+    {
+        get
+        {
+            return _playerHP;
+        }
+        set
+        {
+            if (value < 0)
+            {
+                _playerHP = 0;
+            }
+            else if (value > playerMaxHP)
+            {
+                _playerHP = playerMaxHP;
+            }
+            else
+            {
+                _playerHP = value;
+
+            }
+        }
+    }
+
+    public float playerMaxStamina = 100.0f;
+    private float _playerStamina = 100.0f;
+
+    public float playerStamina
+    {
+        get
+        {
+            return _playerStamina;
+        }
+        set
+        {
+            if (value < 0)
+            {
+                _playerStamina = 0;
+            }
+            else if (value > playerMaxStamina)
+            {
+                _playerStamina = playerMaxStamina;
+            }
+            else
+            {
+                _playerStamina = value;
+
+            }
+        }
+    }
+
+    public int playerMaxFear = 5;
+    private int _playerFear = 0;
+
+    public int playerFear
+    {
+        get
+        {
+            return _playerFear;
+        }
+        set
+        {
+            if (value < 0)
+            {
+                _playerFear = 0;
+            }
+            else if (value > playerMaxFear)
+            {
+                _playerStamina = playerMaxFear;
+            }
+            else
+            {
+                _playerFear = value;
+
+            }
+        }
+    }
 
     public void cursorSetActive(bool activate)
     {

@@ -58,6 +58,7 @@ public class ChattingSystem : MonoBehaviour
     void Start()
     {
         pageCurrent = 0;
+        Panel.SetActive(false);
     }
 
     // Update is called once per frame
