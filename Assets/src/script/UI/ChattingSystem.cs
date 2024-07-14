@@ -76,6 +76,7 @@ public class ChattingSystem : MonoBehaviour
         if (!Panel.activeSelf)
         {
             Panel.SetActive(true);
+            Center.instance.cursorSetActive(true);
             Debug.Log("�г� Ȱ��ȭ ��");
 
             // json ���� �ҷ�����
@@ -303,7 +304,7 @@ public class ChattingSystem : MonoBehaviour
         //�г� ��Ȱ��ȭ
         Panel.SetActive(false);
 
-        CurserController.cursorSetActive(false);
+        Center.instance.cursorSetActive(false);
 
         Debug.Log("�г� ��Ȱ��ȭ ��");
 

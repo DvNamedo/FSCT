@@ -33,7 +33,7 @@ public class NextScene : MonoBehaviour
         Center.instance.step = Center.StartAnimatingPartition.btnClick;
         yield return new WaitUntil(() => Center.instance.step == Center.StartAnimatingPartition.blackBG_Show);
 
-        CurserController.cursorSetActive(false);
+        Center.instance.cursorSetActive(false);
         LoadingSceneManager.LoadScene(NextSceneName);
     }
 
