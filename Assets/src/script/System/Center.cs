@@ -37,6 +37,7 @@ public class Center : MonoBehaviour
 
 
     public bool isCorrectOnQuestion = true;
+    public float playerHP = 100.0f;
 
     public void cursorSetActive(bool activate)
     {
