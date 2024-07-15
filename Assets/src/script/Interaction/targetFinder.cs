@@ -52,19 +52,19 @@ public class targetFinder : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 
-                Debug.Log("Raycasting");
+                //Debug.Log("Raycasting");
 
                 // 유효한 경우(If valid)
                 if (!agent.isPathStale)
                 {
                     if (hit.transform.gameObject.Equals(target))
                     {
-                        Debug.Log(" Seeing player");
+                //        Debug.Log(" Seeing player");
                         agent.SetDestination(hit.point);
                     }
                     else
                     {
-                        Debug.Log(" Unseeing player");
+                //        Debug.Log(" Unseeing player");
                         agent.SetDestination(target.transform.position);
                     }
 

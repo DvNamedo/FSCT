@@ -1,14 +1,13 @@
-using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class StaminaManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     public Image StaminaBar;
+
+    // Start is called before the first frame update
     void Start()
     {
         
@@ -19,5 +18,4 @@ public class StaminaManager : MonoBehaviour
     {
         StaminaBar.fillAmount = Center.instance.playerStamina / Center.instance.playerMaxStamina;
     }
-       
 }

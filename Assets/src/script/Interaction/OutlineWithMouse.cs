@@ -8,6 +8,10 @@ public class OutlineWithMouse : MonoBehaviour
 {
     public bool isShepheiding = false;
 
+    public float clickReach = 1000f;
+    public Camera playerCamera;
+
+
     [Range(0f, 1f)]
     public float[] strainColor;
 
@@ -56,16 +60,33 @@ public class OutlineWithMouse : MonoBehaviour
             mOutline.OutlineColor = new Color(r, g, b, clearAlpha * constant);
     }
 
-    public void OnMouseEnter()
+    public void OnMouseOver()
     {
         mouseEntering = true;
-        mOutline.OutlineWidth = 5f;
+        
+        
+        Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, clickReach))
+        {
+            mOutline.OutlineWidth = 10f;
+        }
+        else
+        {
+            mOutline.OutlineWidth = 5f;
+        }
+
     }
+
+
+
 
     public void OnMouseExit()
     {
         mouseEntering = false;
         mOutline.OutlineWidth = 2.6f;
+
+
     }
 
 
@@ -73,8 +94,15 @@ public class OutlineWithMouse : MonoBehaviour
     {
         if(onClickAtGameobjectEvent != null)
         {
+            
+            Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
 
-            onClickAtGameobjectEvent.Invoke();
+            if(Physics.Raycast(ray, out RaycastHit hit , clickReach))
+            {
+                onClickAtGameobjectEvent.Invoke();
+            }
+    
+            
         }
 
     }

@@ -36,13 +36,27 @@ namespace StarterAssets
 
 		public void OnJump(InputValue value)
 		{
-			Debug.Log("Jump input received: " + value.isPressed);
-			JumpInput(value.isPressed);
+			if(Center.instance.playerStamina >= transform.GetComponent<StaminaInteract>().playerStaminaJumpReduceSpeed || transform.name != "Charactor")
+            {
+				Debug.Log("Jump input received: " + value.isPressed);
+				JumpInput(value.isPressed);
+            }
+
+
 		}
 
 		public void OnSprint(InputValue value)
 		{
-			SprintInput(value.isPressed);
+			if(Center.instance.playerStamina >= transform.GetComponent<StaminaInteract>().playerStaminaSprintReduceSpeed || transform.name != "Charactor")
+            {
+
+				SprintInput(value.isPressed);
+            }
+            else
+            {
+				SprintInput(false);
+            }
+
 		}
 #endif
 
