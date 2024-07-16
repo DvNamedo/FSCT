@@ -17,18 +17,11 @@ public class PlayerHPManager : MonoBehaviour
     {
         if(Center.instance.isCorrectOnQuestion == false)
         {
-            StartCoroutine(playSound(DeadOfSound));
+            StartCoroutine(Center.instance.playSound(DeadOfSound));
             Center.instance.isCorrectOnQuestion = true;
         }
     }
 
-    public IEnumerator playSound(GameObject source)
-    {
-        var sound = Instantiate(source);
-        sound.SetActive(true);
 
-        yield return new WaitWhile(() => sound.GetComponent<AudioSource>().isPlaying);
-        Destroy(sound);
-    }
 
 }

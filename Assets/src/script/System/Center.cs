@@ -146,7 +146,13 @@ public class Center : MonoBehaviour
         blackBG_Show
     }
 
+    public IEnumerator playSound(GameObject source)
+    {
+        var sound = Instantiate(source);
+        sound.SetActive(true);
 
-
+        yield return new WaitWhile(() => sound.GetComponent<AudioSource>().isPlaying);
+        Destroy(sound);
+    }
 
 }
