@@ -439,6 +439,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCorrectOnQuestion: 1
+  staminaTimer: 2
+  staminaTimerLimit: 10
+  staminaRegenSpeed: 0.5
+  playerMaxHP: 100
+  playerMaxStamina: 100
+  playerMaxFear: 5
+  isSeen: 0
+  recentCorrectObject: []
   step: 0
 --- !u!65 &770672927
 BoxCollider:

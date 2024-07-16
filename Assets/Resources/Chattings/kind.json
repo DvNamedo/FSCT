@@ -1,0 +1,42 @@
+{
+  "performer":"kind",
+  "chatSet": [
+    {
+      "speaker": "(착한 친구)",
+      "message": "친구야.. 요즘 우리학교에서 학교폭력이 많이 있는거 같은데..학교폭력을 어떻게 예방해야될까? 혹시 알고 있어?",
+      "type": "general",
+      "ChoiceQizer": {},
+      "AnswerQizer": {}
+    },
+    {
+      "speaker": "나",
+      "message": "어.. 내가 방법을 찾아볼게..!",
+      "type": "general",
+      "ChoiceQizer": {},
+      "AnswerQizer": {}
+    },
+    {
+      "speaker": "(질문)",
+      "message": "학교폭력을 예방 할 수 있는 방법은 뭐가 있지..?",
+      "type": "choice",
+      "ChoiceQizer": {
+      "options": [
+             "친구사귀기를 소극적으로 한다",
+              "돈을 자랑한다",
+              "인적이 드문길을 다닌다",
+              "청소년 유해업소에 간다",
+              "폭력 발생시 신고할 수 있는 전화번호들을 알아둔다"
+             ]  ,
+      "correctAnswer": "폭력 발생시 신고할 수 있는 전화번호들을 알아둔다"
+      },
+       "AnswerQizer": {}
+    },
+    {
+      "speaker": "(착한 친구)",
+      "message": "고마워!! 우리학교에서 일어나는 학교폭력을 예방해볼게!",
+      "type": "general",
+      "ChoiceQizer": {},
+      "AnswerQizer": {}
+    }
+  ]
+}

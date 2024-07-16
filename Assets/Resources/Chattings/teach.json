@@ -1,0 +1,40 @@
+{
+  "performer":"teach",
+  "chatSet": [
+    {
+      "speaker": "(선생님을 꿈꾸는 친구)",
+      "message": "친구야 !! 한번만 도와주라 학교폭력예방교육 할때 이 질문 괜찮은거 같아??",
+      "type": "general",
+      "ChoiceQizer": {},
+      "AnswerQizer": {}
+    },
+    {
+      "speaker": "나",
+      "message": "어......한번 볼게..",
+      "type": "general",
+      "ChoiceQizer": {},
+      "AnswerQizer": {}
+    },
+    {
+    "speaker": "(질문)",
+    "message": "놀이터에서 초등학생에게 돈을 빼앗는 친구 옆에서 팔짱 끼고 구경만 했다. 돈 뺏은 친구가 떡볶이를 사줘서 먹었다. 나는 무죄다.",
+    "type": "choice",
+    "ChoiceQizer": {
+      "options": [
+        "무죄다",
+        "유죄다",
+        "반반이다"
+      ],
+      "correctAnswer": "유죄다"
+    },
+    "AnswerQizer": {}
+  },
+  {
+    "speaker": "(선생님을 꿈꾸는 친구)",
+      "message": "맞아!! 이 문제에서 '나'는 방관한 죄가 있어! 이 질문 학교폭력예방교육용 질문으로 좋겠다 도와줘서 고마워 ㅎㅎ",
+    "type": "general",
+    "ChoiceQizer": {},
+    "AnswerQizer": {}
+  }
+]
+}

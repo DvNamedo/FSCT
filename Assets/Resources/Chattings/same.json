@@ -1,0 +1,42 @@
+{
+  "performer":"same",
+  "chatSet": [
+    {
+      "speaker": "(반친구이자 같은처지인 왕따 친구)",
+      "message": "저기...학교폭력 당했을때 신고는 어디에 해야돼..??.. 혹시 알려줄 수 있을까..?? 도와줘...",
+      "type": "general",
+      "ChoiceQizer": {},
+      "AnswerQizer": {}
+    },
+    {
+      "speaker": "나",
+      "message": "어.. 잠시만.. 내가 알려줄게..!",
+      "type": "general",
+      "ChoiceQizer": {},
+      "AnswerQizer": {}
+    },
+    {
+    "speaker": "(질문)",
+    "message": "학교폭력을 당했을때 어디에 신고해야할까?",
+    "type": "choice",
+    "ChoiceQizer": {
+      "options": [
+        "911",
+        "친구한테",
+        "117",
+        "010-5123-3658",
+        "007"
+      ],
+      "correctAnswer": "117"
+    },
+    "AnswerQizer": {}
+  },
+  {
+    "speaker": "(반친구이자 같은처지인 왕따 친구)",
+      "message": "너 덕분에 어디에 신고해야될지 알았어 고마워 !!",
+    "type": "general",
+    "ChoiceQizer": {},
+    "AnswerQizer": {}
+  }
+]
+}

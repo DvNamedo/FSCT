@@ -7,6 +7,7 @@ using Unity.AI.Navigation;
 public class targetFinder : MonoBehaviour
 {
     NavMeshAgent agent;
+    public float AgentSpeed;
     public NavMeshSurface nms;
 
     public GameObject target;
@@ -21,9 +22,11 @@ public class targetFinder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nms.CancelInvoke();
         nms.BuildNavMesh();
+        StartCoroutine(updateFrequency(1f));
+
         StartCoroutine(targetSelect(m_updateInterval));
+        agent.angularSpeed = 1000f;
     }
 
     // Update is called once per frame
@@ -33,10 +36,20 @@ public class targetFinder : MonoBehaviour
     }
 
     
+    IEnumerator updateFrequency(float time)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(time);
+            nms.BuildNavMesh();
+        }
+
+
+    }
 
 
         IEnumerator targetSelect(float updateInterval)
-    {
+        {
         while (true)
         {
             
@@ -61,11 +74,15 @@ public class targetFinder : MonoBehaviour
                     {
                 //        Debug.Log(" Seeing player");
                         agent.SetDestination(hit.point);
+                        agent.speed = AgentSpeed;
+                        Center.instance.isSeen = true;
                     }
                     else
                     {
                 //        Debug.Log(" Unseeing player");
                         agent.SetDestination(target.transform.position);
+                        agent.speed = AgentSpeed * 0.75f;
+                        Center.instance.isSeen = false;
                     }
 
 
@@ -73,7 +90,7 @@ public class targetFinder : MonoBehaviour
                 }
                 else
                 {
-
+                    agent.isStopped = true;
                 }
 
             }

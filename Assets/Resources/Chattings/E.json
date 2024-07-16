@@ -1,0 +1,42 @@
+{
+  "performer":"E",
+  "chatSet": [
+    {
+      "speaker": "(친구가 많고 활발한 친구)",
+      "message": "우리반 좀 어두운거 같은데.. 어떻게 밝게 만들어야될까?? 흠.. 아이디어 좀 줘봐!",
+      "type": "general",
+      "ChoiceQizer": {},
+      "AnswerQizer": {}
+    },
+    {
+      "speaker": "나",
+      "message": "어..........생각좀 해볼게...",
+      "type": "general",
+      "ChoiceQizer": {},
+      "AnswerQizer": {}
+    },
+    {
+    "speaker": "(질문)",
+    "message": "다음 중 우리가 꿈꾸는 멋진 교실은?",
+    "type": "choice",
+    "ChoiceQizer": {
+      "options": [
+        "상대방의 이야기를 듣지 않고 하고 싶은 말만 하는 교실",
+        "나만 상처받지 않으면 모든 것이 허용되는 교실",
+        "학교폭력을 목격해도 무관심한 교실",
+        "특정 학생을 상대로 장난을 쳐 웃음이 끊이지 않는 교실",
+        "단 한 명이라도 소외되지 않고 모두가 행복한 교실"
+      ],
+      "correctAnswer": "단 한 명이라도 소외되지 않고 모두가 행복한 교실"
+    },
+    "AnswerQizer": {}
+  },
+  {
+    "speaker": "(친구가 많고 활발한 친구)",
+      "message": "ㅎㅎㅎ 우리반을 그렇게 만들꺼야 !!",
+    "type": "general",
+    "ChoiceQizer": {},
+    "AnswerQizer": {}
+  }
+]
+}

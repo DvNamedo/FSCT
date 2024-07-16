@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Center : MonoBehaviour
 {
+
     private static Center mInstance = null;
     public static Center instance
     {
@@ -35,6 +36,11 @@ public class Center : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(recentCorrectObject.Contains(null))
+            recentCorrectObject.Remove(null);
+    }
 
     public bool isCorrectOnQuestion = true;
     public float staminaTimer = 2.0f;
@@ -42,6 +48,8 @@ public class Center : MonoBehaviour
     public float staminaRegenSpeed = 1.0f;
     public float playerMaxHP = 100.0f;
     private float _playerHP = 100.0f;
+
+    public int questionToken = 0;
 
     public float playerHP
     {
@@ -97,6 +105,9 @@ public class Center : MonoBehaviour
     public int playerMaxFear = 5;
     private int _playerFear = 0;
 
+    public bool isSeen = false;
+
+    public List<GameObject> recentCorrectObject;
     public int playerFear
     {
         get

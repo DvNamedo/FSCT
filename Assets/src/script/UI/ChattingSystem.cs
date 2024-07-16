@@ -35,6 +35,7 @@ public class ChattingSystem : MonoBehaviour
 
     int correctNumber = 0;
     int pageCurrent = 0;
+    bool isCorrect = false;
 
     private void Awake()
     {
@@ -126,14 +127,23 @@ public class ChattingSystem : MonoBehaviour
                     for (int i = 0; i < source.chatSet[pageCurrent].ChoiceQizer.options.Count; i++)
                     {
                         Options.Add(Instantiate(ChoiceTabsPrefab, parent: Panel.transform));
-                        Options[i].GetComponent<RectTransform>().position = ChoiceTabsPrefab.GetComponent<RectTransform>().position + new Vector3(0,optionsInverval * i);
+                    }
+
+                    for(int i = 0; i < source.chatSet[pageCurrent].ChoiceQizer.options.Count; i++)
+                    {
+                        Options[i].GetComponent<RectTransform>().position = ChoiceTabsPrefab.GetComponent<RectTransform>().position + new Vector3(0, optionsInverval * i, 0);
                         Options[i].SetActive(true);
 
-                        if(source.chatSet[pageCurrent].ChoiceQizer.options[i] == source.chatSet[pageCurrent].ChoiceQizer.correctAnswer)
+                        Debug.Log(source.chatSet[pageCurrent].ChoiceQizer.options[i]);
+
+                        if (source.chatSet[pageCurrent].ChoiceQizer.options[i] == source.chatSet[pageCurrent].ChoiceQizer.correctAnswer)
                         {
                             correctNumber = i;
+                            Debug.Log("correct : " + correctNumber + "|" + source.chatSet[pageCurrent].ChoiceQizer.options);
                         }
                     }
+
+                    Debug.Log(source.chatSet[pageCurrent].ChoiceQizer.correctAnswer);
 
 
                     break;
@@ -234,6 +244,7 @@ public class ChattingSystem : MonoBehaviour
                                 {
                                     Debug.Log("맞음");
                                     Center.instance.isCorrectOnQuestion = true;
+                                    Center.instance.recentCorrectObject.Add(GameObject.Find(source.performer));
                                     break;
                                 }
                                 else
@@ -265,8 +276,10 @@ public class ChattingSystem : MonoBehaviour
                         isCliked = isCliked || AnswerInput.transform.Find("Confirm").GetComponent<clicked>().isClick;
                         if (AnswerInput.GetComponent<InputField>().text != "")
                         {
-                            if(isCliked)
-                                Center.instance.isCorrectOnQuestion = source.chatSet[pageCurrent].AnswerQizer.correctAnswer == AnswerInput.GetComponent<InputField>().text;
+                            if (isCliked)
+                                isCorrect = source.chatSet[pageCurrent].AnswerQizer.correctAnswer == AnswerInput.GetComponent<InputField>().text;
+                                
+                                
                         }
                         else
                         {
@@ -280,6 +293,8 @@ public class ChattingSystem : MonoBehaviour
 
                     });
                     Debug.Log("end Answer");
+                    Center.instance.isCorrectOnQuestion = isCorrect;
+                    if (isCorrect) Center.instance.recentCorrectObject.Add(GameObject.Find(source.performer));
                     AnswerInput.transform.Find("Confirm").GetComponent<clicked>().isClick = false;
                     
                     break;
@@ -310,12 +325,14 @@ public class ChattingSystem : MonoBehaviour
 
 
     public class ChattingManager
-    {
+    {        
+        public string performer { get; set; }
         public List<Chat> chatSet { get; set; }
     }
 
     public class Chat
     {
+
         public string speaker { get; set; }
         public string message { get; set; }
         public string type { get; set; }

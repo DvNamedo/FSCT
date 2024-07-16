@@ -80,7 +80,6 @@ public class UIFader : MonoBehaviour
             float sinValue = Amplitude * Mathf.Sin(2 * Mathf.PI * frequency * frame);
             thisObject.GetComponent<Image>().color = new Color(0, 0, 0, (offset + sinValue) / 255f);
 
-            Debug.Log($"fading:{frame}");
             frame++;
             return frame < 1 / (4 * frequency);
         });
